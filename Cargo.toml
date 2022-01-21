@@ -8,8 +8,7 @@ name = "squall_router"
 crate-type = ["cdylib"]
 
 [dependencies]
-mlua = { version = "0.7", features = ["lua53", "vendored", "module"] }
-#mlua = { version = "0.7", features = ["lua54", "vendored", "module"] }
+mlua = { version = "0.7", features = ["module"] }
 squall-router = "0.2.2"
 
 [features]
