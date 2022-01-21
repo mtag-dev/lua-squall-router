@@ -21,11 +21,10 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
         target: ${{ matrix.target }}
-        override: true
+#        override: true
     - name: Run ${{ matrix.lua }} tests
       run: |
         cargo build --features "${{ matrix.lua }},vendored"
-        (cd testcrate && cargo test --features ${{ matrix.lua }})
       shell: bash
 
   test_module:
@@ -46,7 +45,7 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
         target: ${{ matrix.target }}
-        override: true
+#        override: true
     - name: Install dependencies (macos)
       if: ${{ matrix.os == 'macos-latest' }}
       run: |
@@ -81,7 +80,7 @@ jobs:
       with:
         toolchain: ${{ matrix.rust }}
         target: ${{ matrix.target }}
-        override: true
+#        override: true
     - name: Install dependencies
       run: |
         curl -L -O "https://sourceforge.net/projects/luabinaries/files/5.3.6/Tools%20Executables/lua-5.3.6_Win64_bin.zip"
@@ -110,7 +109,7 @@ jobs:
       with:
         toolchain: stable
         components: rustfmt
-        override: true
+#        override: true
     - run: cargo fmt -- --check
 
   clippy:
@@ -125,7 +124,7 @@ jobs:
         with:
             toolchain: nightly
             components: clippy
-            override: true
+#            override: true
       - uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
