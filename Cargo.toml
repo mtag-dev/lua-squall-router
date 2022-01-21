@@ -1,0 +1,21 @@
+[package]
+name = "squall_router"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "squall_router"
+crate-type = ["cdylib"]
+
+[dependencies]
+mlua = { version = "0.7", features = ["lua53", "vendored", "module"] }
+#mlua = { version = "0.7", features = ["lua54", "vendored", "module"] }
+squall-router = "0.2.2"
+
+[features]
+lua54 = ["mlua/lua54"]
+lua53 = ["mlua/lua53"]
+lua52 = ["mlua/lua52"]
+lua51 = ["mlua/lua51"]
+luajit = ["mlua/luajit"]
+vendored = ["mlua/vendored"]
