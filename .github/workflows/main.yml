@@ -97,8 +97,8 @@ jobs:
         mv /c/lua/lua53.dll /mingw64/bin
         mv /c/lua/liblua53.a /c/lua/lib/lua53.lib
         rm -rf lua-5.3.6* luarocks-3.7.0*
+        /c/lua/bin/luarocks install busted
         /c/lua/bin/luarocks --tree=/c/lua make
-        /c/lua/bin/luarocks --tree=/c/lua install busted
       shell: bash
     - name: Run tests
       run: |
