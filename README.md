@@ -9,11 +9,30 @@ Implementation for other languages:
 
 ### Installation
 
+Building of library requires Rust installation. Ubuntu example
+
+```
+apt update
+apt install -y unzip curl make build-essential
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+```
+
+If you don't have installed luarocks. You also should execute following lines.
+
+```shell
+curl -L -O https://luarocks.org/releases/luarocks-3.7.0.tar.gz
+tar xpf luarocks-3.7.0.tar.gz && cd luarocks-3.7.0 && ./configure && make && make install && cd .. && rm -rf luarocks-3.7.0*
+```
+
+Build library
+
 ```shell
 luarocks install squall-router
 ````
 
-### Full example
+Please refer `examples` folder for the example of building the library as a part of OpenResty image.
+
+### Usage example
 
 ```lua
 router = require("squall_router").new_router()
