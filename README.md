@@ -54,9 +54,9 @@ res, err = router:resolve("GET", "/event/" .. event_id, true)
 assert(res[1] == 2)
 assert(res[2]['event_id'] == event_id)
 
-res, err = router:resolve("GET", f"/event/123432", true)
+res, err = router:resolve("GET", "/event/123432", true)
 assert(res == nil)
 
-res, err = router:resolve("GET", f"/static/css/style.css")
+res, err = router:resolve("GET", "/static/css/style.css")
 assert(res[1] == 3)
 ```

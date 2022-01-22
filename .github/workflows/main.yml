@@ -62,9 +62,10 @@ jobs:
         tar xpf luarocks-3.7.0.tar.gz && cd luarocks-3.7.0 && ./configure && make && sudo make install && cd .. && rm -rf luarocks-3.7.0*
         sudo chown -R $UID /usr/local
         luarocks make
+        luarocks install busted
       shell: bash
-    - name: Run module inside Lua
-      run: lua -l squall_router -e 'print(squall_router)'
+    - name: Run tests
+      run: busted test.lua
 
   test_module_windows:
     name: Test module on Windows
@@ -96,9 +97,10 @@ jobs:
         mv /c/lua/liblua53.a /c/lua/lib/lua53.lib
         rm -rf lua-5.3.6* luarocks-3.7.0*
         /c/lua/bin/luarocks --tree=/c/lua make
+        /c/lua/bin/luarocks --tree=/c/lua install busted
       shell: bash
-    - name: Run module inside Lua
-      run: /c/lua/bin/lua53 -l squall_router -e 'print(squall_router)'
+    - name: Run tests
+      run: /c/lua/bin/busted test.lua
       shell: bash
 
   rustfmt:
