@@ -50,7 +50,7 @@ jobs:
     - name: Install dependencies (macos)
       if: ${{ matrix.os == 'macos-latest' }}
       run: |
-        brew install lua luarocks
+        brew install lua luarocks busted
         luarocks make
       shell: bash
     - name: Install dependencies
@@ -100,7 +100,7 @@ jobs:
         /c/lua/bin/luarocks --tree=/c/lua install busted
       shell: bash
     - name: Run tests
-      run: /c/lua/bin/busted test.lua
+      run: busted test.lua
       shell: bash
 
   rustfmt:
