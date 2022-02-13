@@ -1,9 +1,9 @@
 package = "squall-router"
-version = "0.1.0-1"
+version = "0.1.1-1"
 
 source = {
     url = "git+https://github.com/mtag-dev/lua-squall-router",
-    tag = "0.1.0",
+    tag = "0.1.1",
 }
 
 description = {
