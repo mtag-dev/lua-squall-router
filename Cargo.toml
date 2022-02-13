@@ -5,7 +5,7 @@ edition = "2018"
 
 [lib]
 name = "squall_router"
-crate-type = ["staticlib"]
+crate-type = ["cdylib"]
 
 [dependencies]
 mlua = { version = "0.7", features = ["module"] }
